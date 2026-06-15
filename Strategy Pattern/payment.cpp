@@ -64,33 +64,25 @@ public:
 
 int main() {
 
-    PaymentProcessor processor(
-        new CreditCardPayment()
-    );
+    PaymentProcessor processor(new CreditCardPayment());
 
     processor.processPayment(5000);
 
     cout << "-------------------" << endl;
 
-    processor.setPaymentMethod(
-        new PaypalPayment()
-    );
+    processor.setPaymentMethod(new PaypalPayment());
 
     processor.processPayment(2500);
 
     cout << "-------------------" << endl;
 
-    processor.setPaymentMethod(
-        new CryptoPayment()
-    );
+    processor.setPaymentMethod(new CryptoPayment());
 
     processor.processPayment(10000);
 
     cout << "-------------------" << endl;
 
-    processor.setPaymentMethod(
-        new UpiPayment()
-    );
+    processor.setPaymentMethod(new UpiPayment());
 
     processor.processPayment(800);
 
