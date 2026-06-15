@@ -53,6 +53,7 @@ public:
         paymentMethod = strategy;
     }
 
+    // IMPORTANT-> THIS HELPS TO SWITCH BETWEEN THE PAYMENT METHODS DYNAMICALLY
     void setPaymentMethod(PaymentStrategy* strategy) {
         paymentMethod = strategy;
     }
@@ -69,18 +70,23 @@ int main() {
     processor.processPayment(5000);
 
     cout << "-------------------" << endl;
+    
+
+    // Change Payment Method Dynamically
 
     processor.setPaymentMethod(new PaypalPayment());
 
     processor.processPayment(2500);
 
     cout << "-------------------" << endl;
+    
 
     processor.setPaymentMethod(new CryptoPayment());
 
     processor.processPayment(10000);
 
     cout << "-------------------" << endl;
+    
 
     processor.setPaymentMethod(new UpiPayment());
 
